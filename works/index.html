@@ -12,10 +12,12 @@
 </head>
 <body>
     <!-- HTML -->
-    <p>Hello world!</p>
+    <p id="name">File Name Here</p>
     <!-- JavaScript -->
     <script type="text/javascript">
+        var nameText = document.getElementById("name");
         alert(getParam('file'));
+        nameText.value = getParam('file');
         function getParam(name, url) {
             if (!url) url = window.location.href;
             name = name.replace(/[\[\]]/g, "\\$&");
