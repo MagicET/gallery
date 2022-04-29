@@ -26,7 +26,7 @@
         request.onload = function() {
             const jsonData = request.response;
             console.log(jsonData);
-            nameText.innerHTML = jsonData["name"];
+            nameText.innerHTML = jsonData.name;
             image.src = './' + fileName + '/' + jsonData["image"][0];
             image.alt = jsonData["image"][0];
             image.title = jsonData["image"][0];
