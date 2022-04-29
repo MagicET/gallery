@@ -17,7 +17,7 @@
     <script type="text/javascript">
         const fileName = getParam('file')
         let request = new XMLHttpRequest();
-        request.open('GET', './' + fileName + '/' + fileName + '.json');
+        request.open('GET', './' + fileName + '/info.json');
         var nameText = document.getElementById("name");
         alert(fileName);
         nameText.innerHTML = fileName;
