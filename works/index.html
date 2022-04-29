@@ -15,12 +15,18 @@
     <p id="name">File Name Here</p>
     <!-- JavaScript -->
     <script type="text/javascript">
+        let request = new XMLHttpRequest();
+        request.open('GET', './' + fileName + '/' + fileName + '.json');
         const fileName = getParam('file')
-        const jsonData= require('./' + fileName + '/' + fileName + '.json'); 
         var nameText = document.getElementById("name");
-        alert(getParam('file'));
-        nameText.innerHTML = getParam('file');
-        console.log(jsonData);
+        alert(fileName);
+        nameText.innerHTML = fileName;
+        request.responseType = 'json';
+        request.send();
+        request.onload = function() {
+            const jsonData = request.response;
+            console.log(jsonData);
+        }
         
         function getParam(name, url) {
             if (!url) url = window.location.href;
