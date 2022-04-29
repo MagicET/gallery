@@ -28,7 +28,7 @@
         var nameText = document.getElementById("name");
         var image = document.getElementById("image");
         nameText.innerHTML = jsonData.name
-        image.src = jsonData.image[0]
+        image.src = './' + fileName + '/' + jsonData.image[0]
         image.alt = jsonData.image[0]
         image.title = jsonData.image[0]
         
