@@ -15,9 +15,9 @@
     <p id="name">File Name Here</p>
     <!-- JavaScript -->
     <script type="text/javascript">
+        const fileName = getParam('file')
         let request = new XMLHttpRequest();
         request.open('GET', './' + fileName + '/' + fileName + '.json');
-        const fileName = getParam('file')
         var nameText = document.getElementById("name");
         alert(fileName);
         nameText.innerHTML = fileName;
