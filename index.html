@@ -26,6 +26,7 @@
     <script type="text/javascript">
         var works = ["colorful_star"]; 
         for (var i = 0; i < works.length; i++) {
+            let request = new XMLHttpRequest();
             request.open('GET', './works/' + works[i] + '/info.json');
             request.responseType = 'json';
             request.send();
