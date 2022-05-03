@@ -53,29 +53,29 @@
                 
                 document.getElementById("container").appendChild(content); 
             };
-            
-            function create() {
-                var content = document.createElement('div');
-                content.class = "cell";
-
-                var innerA = document.createElement('a');
-                innerA.href = "https://magicet.github.io/gallery/works?file=" + "colorful_star";
-
-                var innerP = document.createElement('p');
-                innerP.innerHTML = "Colorful Star";
-
-                var innerImage = document.createElement('img');
-                innerImage.src = './works/' + "colorful_star" + '/' + "retro_colorful_star.png";
-                innerImage.alt = "retro_colorful_star.png";
-                innerImage.title = "retro_colorful_star.png";
-
-                content.appendChild(innerA);
-                innerA.appendChild(innerP);
-                innerA.appendChild(innerImage);
-
-                document.getElementById("container").appendChild(content);
-            };
         };
+        function create() {
+            var content = document.createElement('div');
+            content.class = "cell";
+
+            var innerA = document.createElement('a');
+            innerA.href = "https://magicet.github.io/gallery/works?file=" + "colorful_star";
+
+            var innerP = document.createElement('p');
+            innerP.innerHTML = "Colorful Star";
+
+            var innerImage = document.createElement('img');
+            innerImage.src = './works/' + "colorful_star" + '/' + "retro_colorful_star.png";
+            innerImage.alt = "retro_colorful_star.png";
+            innerImage.title = "retro_colorful_star.png";
+
+            content.appendChild(innerA);
+            innerA.appendChild(innerP);
+            innerA.appendChild(innerImage);
+
+            document.getElementById("container").appendChild(content);
+        };
+        create()
     </script>
 </body>
 
