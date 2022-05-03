@@ -25,20 +25,20 @@
         }
         .cell {
             border: 3px solid dimgray;
-            margin: 12px;
+            padding: 12px;
         }
         .cellLink {
             
         }
         .cellImage {
             border-bottom: 3px solid dimgray;
-            height: 10%;
-            margin: 6px;
-            margin-bottom: -3px;
+            height: 20%;
+            padding: 6px;
+            padding-bottom: -3px;
         }
         .cellP {
-            margin: 6px;
-            margin-top: -3px;
+            padding: 6px;
+            padding-top: -3px;
         }
     </style>
 </head>
@@ -49,8 +49,9 @@
     </div>
     <!-- JavaScript -->
     <script type="text/javascript">
-        var works = ["colorful_star"]; 
+        var works = ["colorful_star", "colorful_star", "colorful_star", "colorful_star", "colorful_star"]; 
         for (var i = 0; i < works.length; i++) {
+            var work = works[i]
             let request = new XMLHttpRequest();
             request.open('GET', './works/' + works[i] + '/info.json');
             request.responseType = 'json';
@@ -63,11 +64,11 @@
                 content.className = "cell";
                 
                 var innerA = document.createElement('a');
-                innerA.href = "https://magicet.github.io/gallery/works?file=" + works[i];
+                innerA.href = "https://magicet.github.io/gallery/works?file=" + work;
                 innerA.className = "cellLink";
                 
                 var innerImage = document.createElement('img');
-                innerImage.src = './works/' + works[i] + '/' + jsonData.image[0];
+                innerImage.src = './works/' + work + '/' + jsonData.image[0];
                 innerImage.alt = jsonData.image[0];
                 innerImage.title = jsonData.image[0];
                 innerImage.className = "cellImage";
