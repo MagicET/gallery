@@ -10,6 +10,18 @@
         body {
             font-family: 'Avenir',　'Helvetica Neue',　'Helvetica',　'Arial',　'Hiragino Sans',　'ヒラギノ角ゴシック',　'メイリオ', Meiryo,　sans-serif;
         }
+        .cell {
+            
+        }
+        .cellLink {
+            
+        }
+        .cellP {
+            
+        }
+        .cellImage {
+            
+        }
     </style>
 </head>
 <body>
@@ -39,14 +51,17 @@
                 
                 var innerA = document.createElement('a');
                 innerA.href = "https://magicet.github.io/gallery/works?file=" + works[i];
+                innerA.class = "cellLink";
                 
                 var innerP = document.createElement('p');
                 innerP.innerHTML = jsonData.name;
+                innerA.class = "cellP";
                 
                 var innerImage = document.createElement('img');
                 innerImage.src = './works/' + works[i] + '/' + jsonData.image[0];
                 innerImage.alt = jsonData.image[0];
                 innerImage.title = jsonData.image[0];
+                innerA.class = "cellImage";
                 
                 content.appendChild(innerA);
                 innerA.appendChild(innerP);
