@@ -7,7 +7,9 @@
     
     <!-- CSS -->
     <style>
-        
+        body {
+            font-family: 'Avenir',　'Helvetica Neue',　'Helvetica',　'Arial',　'Hiragino Sans',　'ヒラギノ角ゴシック',　'メイリオ', Meiryo,　sans-serif;
+        }
     </style>
 </head>
 <body>
@@ -15,8 +17,9 @@
     <p>Hello world!</p>
     <div style="display:flex;" id="container">
         <div>
-            <p>Colorful Star</p>
-            <a href="https://magicet.github.io/gallery/works?file=colorful_star"></a>
+            <a href="https://magicet.github.io/gallery/works?file=colorful_star">
+                <p>Colorful Star(test)</p>
+            </a>
         </div>
     </div>
     <!-- JavaScript -->
@@ -32,6 +35,9 @@
                 
                 var content = document.createElement('div');
                 content.class = "cell";
+                
+                var innerA = document.createElement('a');
+                innerA.href = "https://magicet.github.io/gallery/works?file=" + works[i]
                 
                 var innerP = document.createElement('p');
                 innerP.innerHTML = jsonData.name;
