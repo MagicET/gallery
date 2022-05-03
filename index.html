@@ -13,10 +13,40 @@
 <body>
     <!-- HTML -->
     <p>Hello world!</p>
-    <a href="https://magicet.github.io/gallery/works?file=colorful_star">Colorful Star</a>
+    <div style="display:flex;" id="container">
+        <div>
+            <p>Colorful Star</p>
+            <a href="https://magicet.github.io/gallery/works?file=colorful_star"></a>
+        </div>
+    </div>
     <!-- JavaScript -->
     <script type="text/javascript">
-        
+        var works = ["colorful_star"]; 
+        for (var i = 0; i < works.length; i++) {
+            request.open('GET', './works/' + works[i] + '/info.json');
+            request.responseType = 'json';
+            request.send();
+            request.onload = function() {
+                const jsonData = request.response;
+                console.log(jsonData);
+                
+                var content = document.createElement('div');
+                content.class = "cell";
+                
+                var innerP = document.createElement('p');
+                innerP.innerHTML = jsonData.name;
+                
+                var innerImage = document.createElement('img');
+                innerImage.src = './works/' + works[i] + '/' + jsonData.image[0];
+                innerImage.alt = jsonData.image[0];
+                innerImage.title = jsonData.image[0];
+                
+                content.appendChild(innerP);
+                content.appendChild(innerImage);
+                
+                document.getElementById("container").appendChild(content); 
+            }
+        }
     </script>
 </body>
 
