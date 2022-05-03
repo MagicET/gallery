@@ -70,11 +70,11 @@
                 innerImage.src = './works/' + works[i] + '/' + jsonData.image[0];
                 innerImage.alt = jsonData.image[0];
                 innerImage.title = jsonData.image[0];
-                innerA.className = "cellImage";
+                innerImage.className = "cellImage";
                 
                 var innerP = document.createElement('p');
                 innerP.innerHTML = jsonData.name;
-                innerA.className = "cellP";
+                innerP.className = "cellP";
                 
                 content.appendChild(innerA);
                 innerA.appendChild(innerImage);
