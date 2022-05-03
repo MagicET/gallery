@@ -8,26 +8,40 @@
     <!-- CSS -->
     <style>
         body {
+            background: silver;
             font-family: 'Avenir',　'Helvetica Neue',　'Helvetica',　'Arial',　'Hiragino Sans',　'ヒラギノ角ゴシック',　'メイリオ', Meiryo,　sans-serif;
         }
-        .cell {
+        #container {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
             
+            background: white;
+            border: 3px solid black;
+            width: 80%;
+        }
+        .cell {
+            padding: 12px;
         }
         .cellLink {
             
         }
-        .cellP {
-            
-        }
         .cellImage {
-            
+            border-bottom: 3px solid black;
+            height: 10%;
+            padding: 6px;
+            padding-bottom: -3px;
+        }
+        .cellP {
+            padding: 6px;
+            padding-top: -3px;
         }
     </style>
 </head>
 <body>
     <!-- HTML -->
     <p>Hello world!</p>
-    <div style="display:flex;" id="container">
+    <div id="container">
         
     </div>
     <!-- JavaScript -->
@@ -43,25 +57,25 @@
                 console.log(jsonData);
                 
                 var content = document.createElement('div');
-                content.class = "cell";
+                content.className = "cell";
                 
                 var innerA = document.createElement('a');
                 innerA.href = "https://magicet.github.io/gallery/works?file=" + works[i];
-                innerA.class = "cellLink";
-                
-                var innerP = document.createElement('p');
-                innerP.innerHTML = jsonData.name;
-                innerA.class = "cellP";
+                innerA.className = "cellLink";
                 
                 var innerImage = document.createElement('img');
                 innerImage.src = './works/' + works[i] + '/' + jsonData.image[0];
                 innerImage.alt = jsonData.image[0];
                 innerImage.title = jsonData.image[0];
-                innerA.class = "cellImage";
+                innerA.className = "cellImage";
+                
+                var innerP = document.createElement('p');
+                innerP.innerHTML = jsonData.name;
+                innerA.className = "cellP";
                 
                 content.appendChild(innerA);
-                innerA.appendChild(innerP);
                 innerA.appendChild(innerImage);
+                innerA.appendChild(innerP);
                 
                 document.getElementById("container").appendChild(content); 
             };
