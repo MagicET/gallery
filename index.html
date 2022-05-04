@@ -67,7 +67,7 @@
 </head>
 <body>
     <!-- HTML -->
-    <header>
+    <header class="header">
       <h1 class="headline">
         <a href="https://magicet.github.io/gallery/">Meteor's works</a>
       </h1>
@@ -99,12 +99,12 @@
                 innerImage.title = jsonData.image[0];
                 innerImage.className = "cellImage";
                 
-                /*var innerP = document.createElement('p');
+                var innerP = document.createElement('p');
                 innerP.innerHTML = jsonData.name;
-                innerP.className = "cellP";*/
+                innerP.className = "cellP";
                 
                 content.appendChild(innerImage);
-                //content.appendChild(innerP);
+                content.appendChild(innerP);
                 
                 document.getElementById("container").appendChild(content); 
             };
