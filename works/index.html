@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Work</title>
+    <title id="title">Not Found</title>
     
     <!-- CSS -->
     <style>
@@ -30,6 +30,7 @@
             image.src = './' + fileName + '/' + jsonData.image[0];
             image.alt = jsonData.image[0];
             image.title = jsonData.image[0];
+            document.getElementById("title").innerHTML = jsonData.name + " | Meteor";
         }
         
         function getParam(name, url) {
