@@ -39,12 +39,10 @@
             height: fit-content;
             border: 2px solid dimgray;
             margin: 12px;
-        }
-        .cellLink {
             background: white;
             color: dimgray;
         }
-        .cellLink:hover {
+        .cell:hover {
             background: dimgray;
             color:white;
         }
@@ -91,12 +89,9 @@
                 const jsonData = request.response;
                 console.log(jsonData);
                 
-                var content = document.createElement('div');
+                var content = document.createElement('a');
+                content.href = "https://magicet.github.io/gallery/works?file=" + work;
                 content.className = "cell";
-                
-                var innerA = document.createElement('a');
-                innerA.href = "https://magicet.github.io/gallery/works?file=" + work;
-                innerA.className = "cellLink";
                 
                 var innerImage = document.createElement('img');
                 innerImage.src = './works/' + work + '/' + jsonData.image[0];
@@ -108,9 +103,8 @@
                 innerP.innerHTML = jsonData.name;
                 innerP.className = "cellP";
                 
-                content.appendChild(innerA);
-                innerA.appendChild(innerImage);
-                innerA.appendChild(innerP);
+                content.appendChild(innerImage);
+                content.appendChild(innerP);
                 
                 document.getElementById("container").appendChild(content); 
             };
