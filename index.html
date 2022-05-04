@@ -82,6 +82,7 @@
         var work = works[0]
         for (var i = 0; i < works.length; i++) {
             work = works[i]
+            console.log(works[i])
             let request = new XMLHttpRequest();
             request.open('GET', './works/' + works[i] + '/info.json');
             request.responseType = 'json';
